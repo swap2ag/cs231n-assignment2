@@ -31,7 +31,7 @@ class Solver(object):
     'X_train': # training data
     'y_train': # training labels
     'X_val': # validation data
-    'X_train': # validation labels
+    'y_val': # validation labels
   }
   model = MyAwesomeModel(hidden_size=100, reg=10)
   solver = Solver(model, data,
@@ -107,7 +107,7 @@ class Solver(object):
     self.y_val = data['y_val']
     
     # Unpack keyword arguments
-    self.update_rule = kwargs.pop('update_rule', 'sgd')
+    self.update_rule = kwargs.pop('update_rule', 'sgd')   # first paramter is the key and second is default value to use if the key is not found
     self.optim_config = kwargs.pop('optim_config', {})
     self.lr_decay = kwargs.pop('lr_decay', 1.0)
     self.batch_size = kwargs.pop('batch_size', 100)
